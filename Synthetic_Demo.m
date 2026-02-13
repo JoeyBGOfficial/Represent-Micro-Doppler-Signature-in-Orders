@@ -7,8 +7,7 @@
 % 
 % Description:
 %   Generates synthetic Micro-Doppler data and verifies the functionality
-%   of the DTM_to_ChTM extraction function.
-%   Visualizes results using the specific style from SimH_ChTM_Processing.m.
+%     of the DTM_to_ChTM extraction function.
 
 %% Initialization
 clear all; 
@@ -16,14 +15,14 @@ close all;
 clc;
 disp('---------- © Author: JoeyBG © ----------');
 
-%% 1. Visualization Parameters
+%% Visualization Parameters
 Font_Name = 'Palatino Linotype'; 
 Font_Size_Basis = 12;
 Font_Size_Axis = 13;
 Font_Size_Title = 14;
 Font_Weight_Title = 'bold';
 
-% Custom Colormap from SimH_ChTM_Processing.m
+% Custom Colormap
 JoeyBG_Colormap = [0.6196 0.0039 0.2588; 0.8353 0.2431 0.3098; 0.9569 0.4275 0.2627; ...
                    0.9922 0.6824 0.3804; 0.9961 0.8784 0.5451; 1.0000 1.0000 0.7490; ...
                    0.9020 0.9608 0.5961; 0.6706 0.8667 0.6431; 0.4000 0.7608 0.6471; ...
@@ -35,7 +34,7 @@ Chebyshev_Order = 64;
 torso_th = 0.5;
 mD_th = 0.1;
 
-%% 2. Generate Synthetic DTM Data
+%% Generate Synthetic DTM Data
 fprintf('Generating Synthetic Micro-Doppler Data...\n');
 
 % Time-Frequency Grid
@@ -62,15 +61,14 @@ DTM_Synthetic = DTM_Synthetic + Noise;
 % Normalize to [0, 1] as expected by the function
 DTM_Input = mat2gray(DTM_Synthetic);
 
-%% 3. Execute DTM_to_ChTM Function
+%% Execute DTM_to_ChTM Function
 fprintf('Running DTM_to_ChTM Extraction...\n');
 
 % Calling the DTM_to_ChTM function for evaluation
 [ChTM_Macro, ChTM_Micro] = DTM_to_ChTM(DTM_Input, Chebyshev_Order,torso_th,mD_th);
 
-%% 4. Post-Processing for Visualization
-% As per original script logic for visualization
-norm_01 = @(x) (x - min(x(:))) / (max(x(:)) - min(x(:)));
+%% Post-Processing for Visualization
+norm_01 = @(x) (x - min(x(:))) / (max(x(:)) - min(x(:))); % Normalization
 
 % Log transform to reveal details
 ChTM_Macro_Log = log10(abs(ChTM_Macro) + 1e-6);
@@ -80,7 +78,7 @@ ChTM_Micro_Log = log10(abs(ChTM_Micro) + 1e-6);
 ChTM_Macro_Vis = norm_01(ChTM_Macro_Log);
 ChTM_Micro_Vis = norm_01(ChTM_Micro_Log);
 
-%% 5. Visualization
+%% Visualization
 figure('Name', 'Demo: DTM to ChTM Verification', 'Color', 'w', 'Position', [100, 100, 1400, 400]);
 cheb_axis = 0:Chebyshev_Order;
 
