@@ -15,8 +15,6 @@ This approach is developed for the challenge of distinguishing subtle difference
 
 ### Basic Information:
 
-The repository is the open source code for the paper: "Represent Micro-Doppler Signature in Orders", submitted to arXiv.
-
 **My Email:** JoeyBG@126.com;
 
 **Abstract:** Non-line-of-sight sensing of human activities is enabled by TWR, but the distinctiveness of micro-Doppler signatures between similar activities is minimal. Furthermore, the large scale of input images required for time-frequency spectrograms creates challenges for efficiency. To address this, the **Chebyshev-time map** is proposed. This method characterizes micro-Doppler signatures using polynomial orders. We first extract kinematic envelopes of the torso and limbs, then map the spectrum slices into a robust Chebyshev-time coefficient space. This preserves multi-order morphological details while compressing data. Numerical simulations and experiments demonstrate its capability to characterize armed and unarmed activities while achieving a balance between accuracy and input data dimensions.
