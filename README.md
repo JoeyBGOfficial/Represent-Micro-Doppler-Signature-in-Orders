@@ -21,7 +21,7 @@ This approach is developed for the challenge of distinguishing subtle difference
 
 **Corresponding Papers:**
 
-[1] W. Gao, “Represent Micro-Doppler Signature in Orders,” arXiv preprint, Feb. 2026. Link: 
+[1] W. Gao, “Represent Micro-Doppler Signature in Orders,” *arXiv preprint*, Feb. 2026. Link: 
 
 ## II. CHTM GENERATION & VISUALIZATION
 
