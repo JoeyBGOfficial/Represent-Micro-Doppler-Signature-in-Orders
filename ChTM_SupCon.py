@@ -117,7 +117,6 @@ def split_dataset():
     return train_samples, val_samples
 
 # Define strong augmentation for the contrastive learning phase.
-# This helps the model learn invariant features by generating two different views.
 def build_contrastive_transform():
     return transforms.Compose([
         transforms.RandomResizedCrop(IMG_SIZE, scale=(0.6, 1.0)),
@@ -146,7 +145,6 @@ class HSwish(nn.Layer):
         return F.hardswish(x)
 
 # Coordinate Attention Module.
-# Captures long-range dependencies along one spatial direction while preserving precise positional information.
 class CoordAtt(nn.Layer):
     def __init__(self, inp, reduction=32):
         super(CoordAtt, self).__init__()
@@ -221,7 +219,6 @@ class MBConvBlock(nn.Layer):
             return self.conv(x)
 
 # Improved Lightweight CNN backbone network for feature extraction.
-# Integrates MBConv blocks and Coordinate Attention for better radar signature analysis.
 class ConvBackbone(nn.Layer):
     def __init__(self, out_dim=128):
         super().__init__()
