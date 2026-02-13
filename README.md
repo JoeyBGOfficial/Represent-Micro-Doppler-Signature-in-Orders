@@ -4,7 +4,7 @@
 
 ### Write Sth. Upfront
 
-This work presents a novel, physics-aware micro-Doppler representation method for Through-the-Wall Radar (TWR) Human Activity Recognition (HAR): **Chebyshev-Time Map (ChTM)**.
+This work presents a novel, physics-aware micro-Doppler representation method for through-the-wall radar (TWR) human activity recognition (HAR): **Chebyshev-Time Map (ChTM)**.
 
 Unlike traditional methods that rely on raw Doppler-time map (DTM) or range-time map (RTM), which are often high-dimensional and computationally expensive, this work proposes characterizing micro-Doppler signature using approximate orthogonal Chebyshev polynomial orders. By projecting the kinematic envelopes and texture details into a coefficient space, we achieve a robust, interpretable, and compressed representation.
 
